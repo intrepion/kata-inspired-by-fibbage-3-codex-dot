@@ -238,12 +238,15 @@ let polling = false;
 async function poll() {
   if (polling) return;
   polling = true;
+  const requestAuth = auth;
   try {
     const r = await fetch("/api/state", {
-      headers: { Authorization: "Bearer " + auth },
+      headers: { Authorization: "Bearer " + requestAuth },
     });
     if (!r.ok) throw new Error("Connection lost");
     const s = await r.json();
+    // An older spectator response must never erase a newly issued capability.
+    if (requestAuth !== auth) return;
     receivedAt = Date.now();
     $("#connection").textContent = "● LOCAL LOUNGE";
     if (

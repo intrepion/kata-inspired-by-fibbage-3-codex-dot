@@ -5,7 +5,8 @@ Validated 2026-10-16. The final recovered source was copied into a durable non-c
 ## Automated evidence
 
 - Strict TypeScript (strict, noUncheckedIndexedAccess, exactOptionalPropertyTypes), build and formatting checks.
-- Nine Node engine/HTTP tests: private truth/submission projection, capability isolation, alias/truth rejection, merged duplicate bluffs and all-coauthor exclusion, independent literal scoring example, duplicate votes/likes, deadlines and missing answers, stale epochs, complete deterministic five-question/two-blank match, seat-preserving restart, quick-to-standard timer reset, locked bluff/vote reconnect, disconnected-seat deadline progression, host takeover/cross-origin denial and static source allowlist.
+- Eleven Node client/engine/HTTP tests: private truth/submission projection, capability isolation, alias/truth rejection, merged duplicate bluffs and all-coauthor exclusion, independent literal scoring example, duplicate votes/likes, deadlines and missing answers, stale epochs, complete deterministic five-question/two-blank match, seat-preserving restart, quick-to-standard timer reset, locked bluff/vote reconnect, disconnected-seat deadline progression, host takeover/cross-origin denial and static source allowlist.
+- Two delayed-response VM regressions prove that old spectator polls cannot erase newly issued host or player credentials. They failed before the fix and pass afterward.
 - Headless Playwright: separate host and three isolated player contexts, five-question match, draft preservation while another submits, helper-only submission, private answers, own-answer exclusion, bluff and vote reload, reveal, restart and standard timer reset after quick mode.
 - Additional mobile layout check: 390×844 landing and controller join pages with horizontal overflow assertion and screenshots.
 - Headless test reports and screenshots are uploaded by CI. Automated evidence is distinct from native acceptance below.
@@ -23,11 +24,11 @@ Dedicated **Velvet Bluff QA** session; existing tabs, other game previews and sa
 7. Clicked Play again, verified lobby and same seats, reloaded Mira and verified waiting controller. Preview left in this replay-ready lobby.
 8. All three dedicated game tabs marked as deliverables. Native Chrome **Cancel** clicked; subsequent AX diff verified Infobar Container/debugging control removed. This confirms detachment for this session, not any historical extension state.
 
-Native full-match acceptance was repeated after source/UI reconstruction. Earlier pre-recovery screenshots are not used as evidence for the final build.
+Native full-match acceptance was repeated after source/UI reconstruction. After fixing the reviewed stale-poll credential race, the exact final client completed another full native five-question match in quick mode: Mira 7,500 / Jules 6,000, all five reveals verified, followed by restart and controller reload. See [final-client standings](evidence/native-final-client.png). The same preserved host/controller tabs remain replay-ready in room 9141. Earlier pre-recovery screenshots are not used as evidence for the final build.
 
 ## Independent review
 
-Matt Pocock code-review Standards and Spec agents independently reviewed the first implementation. They found quick timers persisting after replay and a helper button also submitting its form. Both are fixed with regressions. A reconnect coverage gap was filled with locked-vote and offline-deadline checks. Recovered engine was independently compared with original semantics; final source received a follow-up review. A large UI renderer remains a maintainability tradeoff for this small dependency-free application.
+Matt Pocock code-review Standards and Spec agents independently reviewed the first implementation. They found quick timers persisting after replay and a helper button also submitting its form. Both are fixed with regressions. A reconnect coverage gap was filled with locked-vote and offline-deadline checks. Recovered engine was independently compared with original semantics; final source received a follow-up review. Follow-up final-source review caught a stale spectator-poll credential race; the client now snapshots request credentials and discards outdated responses, with deterministic regression coverage. A large UI renderer remains a maintainability tradeoff for this small dependency-free application.
 
 ## Limits
 
