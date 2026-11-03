@@ -23,7 +23,7 @@ jobs:
           GAME_ID: kata-inspired-by-fibbage-3-codex-dot
           SITE_ROOT: dist-pages
         run: |
-          export SOURCE_COMMIT="77b8501"
+          export SOURCE_COMMIT="77b8501c24dc14914681c11c8fd3d598202ab6bb"
           python3 -m http.server 4320 --bind 127.0.0.1 --directory "$SITE_ROOT" > /tmp/capture-server.log 2>&1 &
           server_pid=$!
           trap 'kill "$server_pid"' EXIT
