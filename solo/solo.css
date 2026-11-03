@@ -1,0 +1,33 @@
+#vote fieldset {
+  border: 0;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+#vote legend {
+  color: var(--gold);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+#vote label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0.6rem 0;
+  cursor: pointer;
+}
+#vote input[type="radio"] {
+  width: auto;
+  flex: 0 0 auto;
+  accent-color: var(--coral);
+}
+#bluff label {
+  display: block;
+  margin: 1rem 0;
+}
+#bluff input {
+  display: block;
+  width: 100%;
+  max-width: 40rem;
+  margin-top: 0.4rem;
+}

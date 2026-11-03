@@ -114,3 +114,5 @@ coverage/
 .env
 .env.*
 !.env.example
+
+dist-pages/

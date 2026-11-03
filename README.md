@@ -18,7 +18,7 @@ npm start
 
 Open the lounge on the host screen. Open a fresh controller tab per player, enter the room code and a unique name, then start with 2–8 players. Open tabs directly or from the host link; duplicating an already joined controller can copy its session storage and reconnect the same seat. Use **Add test bot** for solo testing; bots are clearly labeled and automatically submit/vote.
 
-The server binds **127.0.0.1 only**. Phones on another device cannot connect with this default. No firewall, router, tunnel or security settings are changed. No public deployment. `PORT=5232 npm start` changes the local port. Preserve the original host tab, whose capability stays in per-tab session storage.
+The server binds **127.0.0.1 only**. Phones on another device cannot connect with this default. No firewall, router, tunnel or security settings are changed. The GitHub Pages edition offers solo play against three computer opponents; the local multiplayer server remains available as described above. `PORT=5232 npm start` changes the local port. Preserve the original host tab, whose capability stays in per-tab session storage.
 
 ## Controls and rules
 
@@ -55,3 +55,7 @@ npm run test:browser
 Deterministic engine tests inject clock/RNG and check scoring, timing, transitions, secrecy, identity, duplicate answers, own-answer exclusion, reconnect and restart. HTTP tests check capabilities, same-origin writes and static allowlist. Headless tests use host plus three isolated player contexts through a complete match. GitHub Actions runs these checks and uploads browser evidence. [QA](docs/QA.md) distinguishes headless evidence from native Chrome acceptance. [Research](docs/RESEARCH.md) records official mechanics and factual sources. [Domain terms](CONTEXT.md) and [decisions](docs/SPEC.md) describe the implemented subset.
 
 MIT licensed. Official github/gitignore Global Linux, Windows and macOS files are retained verbatim in `docs/gitignore` and included in `.gitignore`, followed by project ignores.
+
+## Play online
+
+[Play the solo edition on GitHub Pages](https://intrepion.github.io/kata-inspired-by-fibbage-3-codex-dot/). Return to the [Kata Arcade](https://intrepion.github.io/). The solo match runs locally in one browser tab and restarts on refresh; it does not provide remote multiplayer or server-side answer secrecy.

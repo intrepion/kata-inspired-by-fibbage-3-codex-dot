@@ -11,7 +11,8 @@
     "test": "npm run build && node --test test/*.test.mjs",
     "test:browser": "playwright test",
     "format:check": "prettier --check src public test scripts playwright.config.js tsconfig.json package.json",
-    "start": "node dist/server.js"
+    "start": "node dist/server.js",
+    "build:pages": "node scripts/build-pages.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.58.0",
