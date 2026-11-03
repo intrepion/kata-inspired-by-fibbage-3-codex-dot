@@ -1,6 +1,30 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "gameId": "kata-inspired-by-fibbage-3-codex-dot",
   "playUrl": "https://intrepion.github.io/kata-inspired-by-fibbage-3-codex-dot/",
-  "screenshots": []
+  "screenshots": [
+    {
+      "path": "arcade/screenshots/ci-20261103-01.jpg",
+      "sha256": "3062c2c45eebcb6ce628664ef8944d63485c2e9d2fc4c2b7bb4648239a8ce6fa",
+      "alt": "Velvet Bluff gameplay",
+      "provenance": {
+        "kind": "ci_gameplay_capture",
+        "sourcePath": "arcade/capture-evidence/ci-20261103-01.png",
+        "sourceSha256": "5a4e460f4be8949bbfc968d12c75739fa30fd1c870a5271b8aed26e38207058d",
+        "captureCommit": "77b8501c24dc14914681c11c8fd3d598202ab6bb",
+        "workflowRunId": "41619193888",
+        "inputHashes": {
+          "game.js": "60c8374fd2656909e48135720bce5e961218fe37d585d5f4254d6824537bb422",
+          "index.html": "c34a09b48e22a527ad24b4721542047dccbb0926a34838f4d7ffb240125d0b6a",
+          "prompts.js": "5f05d0e5d6b707f1e03597d95a20a217bebcd7515a2c8d1984ffc11725729b18",
+          "solo.css": "179ee764ae5b405f09b24dcbdd3ab34e7d7ff80438c1db0400ff7e51cac9ab6d",
+          "solo.js": "022fb2425114b3d6b0abc748460b974d42460d72ab7d7ac5db1a73ad0d0c5e13",
+          "style.css": "241d3dabb2ba016d1f7acb57ca5978f780bd87073659678d01a122c6c1a45f17"
+        },
+        "publishedFilesVerifiedAt": "2026-11-03T10:27:47Z",
+        "captureRecordPath": "arcade/capture-evidence/ci-20261103-record.json",
+        "captureRecordSha256": "5637124654a0d6fcebfdc544874fa5250cf3781eb1e2b02c6962d49c642a50fc"
+      }
+    }
+  ]
 }

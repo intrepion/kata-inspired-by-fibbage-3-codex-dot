@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "sourceCommit": "77b8501c24dc14914681c11c8fd3d598202ab6bb",
+  "workflowCommit": "097d6d939b7b381360b06eeee2b9fe4d254d8fea",
+  "runId": "41619193888",
+  "browser": "153.0.8010.12",
+  "viewport": {
+    "width": 1280,
+    "height": 1000
+  },
+  "inputs": {
+    "game.js": "60c8374fd2656909e48135720bce5e961218fe37d585d5f4254d6824537bb422",
+    "index.html": "c34a09b48e22a527ad24b4721542047dccbb0926a34838f4d7ffb240125d0b6a",
+    "prompts.js": "5f05d0e5d6b707f1e03597d95a20a217bebcd7515a2c8d1984ffc11725729b18",
+    "solo.css": "179ee764ae5b405f09b24dcbdd3ab34e7d7ff80438c1db0400ff7e51cac9ab6d",
+    "solo.js": "022fb2425114b3d6b0abc748460b974d42460d72ab7d7ac5db1a73ad0d0c5e13",
+    "style.css": "241d3dabb2ba016d1f7acb57ca5978f780bd87073659678d01a122c6c1a45f17"
+  },
+  "screenshots": ["gameplay-01.png"]
+}
