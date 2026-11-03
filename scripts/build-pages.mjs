@@ -1,5 +1,5 @@
 import { cp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
-import ts from "typescript";
+import { transform } from "esbuild";
 const out = "dist-pages";
 await rm(out, { recursive: true, force: true });
 await mkdir(out, { recursive: true });
@@ -18,11 +18,10 @@ for (const name of ["game", "prompts"]) {
       `const randomBytes = (n) => { const bytes = crypto.getRandomValues(new Uint8Array(n)); return {toString: () => Array.from(bytes, b => b.toString(16).padStart(2, '0')).join('')}; };\nconst randomInt = (n) => { const limit = Math.floor(4294967296 / n) * n; let v; do { v = crypto.getRandomValues(new Uint32Array(1))[0]; } while (v >= limit); return v % n; };`,
     );
   }
-  const output = ts.transpileModule(source, {
-    compilerOptions: {
-      target: ts.ScriptTarget.ES2022,
-      module: ts.ModuleKind.ES2022,
-    },
-  }).outputText;
+  const { code: output } = await transform(source, {
+    loader: "ts",
+    target: "es2022",
+    format: "esm",
+  });
   await writeFile(`${out}/${name}.js`, output);
 }
