@@ -14,8 +14,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v4.4.0
+      - uses: actions/setup-node@v4.4.0
         with:
           node-version: '24'
       - run: npm ci
@@ -30,8 +30,8 @@ jobs:
           trap 'kill "$server_pid"' EXIT
           for i in $(seq 1 40); do curl --fail --silent http://127.0.0.1:4318/ > /dev/null && break; sleep 0.25; done
           node test/solo-browser.mjs
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v4
+      - uses: actions/configure-pages@v5.0.0
+      - uses: actions/upload-pages-artifact@v4.0.0
         with:
           path: dist-pages
   deploy:
@@ -42,4 +42,4 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v4.0.5
